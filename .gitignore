@@ -1,0 +1,4 @@
+/front/node_modules
+/front/.gitignore
+/.env
+/node_modules
