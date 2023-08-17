@@ -1,6 +1,7 @@
 import express from "express"
 import passport from "passport"
 import User from "../modal/user.js"
+import Post from "../modal/post.js"
 import jwt from "jsonwebtoken"
 import { isAuthenticated } from "../middleware/requireSign.js"
 const router = express.Router()
@@ -55,6 +56,7 @@ router.delete("/delete/:id",async (req,res) =>{
           message: "User not found",
         })
       }else{
+        await Post.deleteMany({ user: req.params.id });
         await User.findByIdAndDelete(req.params.id)
         return res.status(200).json({
           message: "User deleted",
