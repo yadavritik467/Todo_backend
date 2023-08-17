@@ -1,4 +1,4 @@
-/front/node_modules
-/front/.gitignore
+/frontend/node_modules
+/frontend/.gitignore
 /.env
 /node_modules
