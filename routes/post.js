@@ -11,10 +11,10 @@ router.get("/get", async (req,res)=>{
 
 
 router.post("/post", async(req,res)=>{
-    const {title,task} = req.body
+    const {title,task,user} = req.body
    
 
-    const text = await Post.create({title,task})
+    const text = await Post.create({title,task,user})
 
     // await text.save()
     res.status(200).json({message:" task created ",text})

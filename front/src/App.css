@@ -1,0 +1,199 @@
+.App {
+ 
+  width: 100%;
+  user-select: none;
+ 
+  overflow: hidden;
+ 
+
+  /* text-align: center; */
+}
+
+.nav{
+  display: flex;
+  justify-content: space-between;
+  
+  height: 30px;
+  padding: 10px 20px;
+  font-size: 1.3rem;
+  color: white;
+  border: 1px solid rgb(71, 70, 70);
+}
+
+.user_container> button{
+   width: 50px;
+   height: 50px;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+  color: white;
+}
+
+button{
+  cursor: pointer;
+  border-radius: 10px;
+  outline: none;
+  border: 1px solid black;
+  opacity: 0.9;
+}
+button:active{
+  opacity: 1;
+}
+
+.post_1{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  width: 100%;
+  padding: 0px 0;
+  /* background-color: rgba(10, 10, 41, 0.947); */
+}
+.post{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: fit-content;
+  width: 100%;
+  padding: 0px 0;
+  background-color: rgba(10, 10, 41, 0.947);
+}
+.create_task_parent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 350px;
+  color: white;
+  /* border: 1px solid white; */
+}
+.create_task{
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  color: black;
+  text-align: center;
+  width: 500px;
+  padding: 20px;
+  gap: 30px;
+}
+
+.create_task > input{
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 10px;
+ 
+}
+.create_task > button{
+  width: 100px;
+  margin-left: auto;
+  background-color: rgba(10, 10, 41, 0.947);
+  color: white;
+  padding: 10px;
+ 
+}
+
+.allTask{
+   width: 500px;
+   /* background-color: aliceblue; */
+}
+.allTask> div{
+   /* width: 100%; */
+   padding: 20px;
+   margin-bottom: 10px;
+   border-radius: 5px;
+   justify-content: center;
+   align-items: center;
+   background-color: aliceblue;
+}
+.allTask> div > button{
+  margin-left: 10px ;
+  width: 90px;
+  background-color: rgba(10, 10, 41, 0.947);
+  color: white;
+  padding: 5px;
+}
+
+/* login / sign form */
+
+.form_parent{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 350px;
+  height: 70vh;
+  color: white;
+  /* border: 1px solid white; */
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  color: black;
+  text-align: center;
+  width: 500px;
+  padding: 20px;
+  /* gap: 30px; */
+}
+
+.form > input{
+  border-radius: 5px;
+  border: 1px solid grey;
+  padding: 10px;
+ 
+}
+.form > button{
+  width: 100px;
+  /* margin-left: auto; */
+  background-color: rgba(10, 10, 41, 0.947);
+  color: white;
+  padding: 10px;
+ 
+}
+
+.form > p{
+ margin-left: auto;
+  
+}
+.form > p> a {
+  color: blue;
+  
+}
+
+.editModal{
+  display: flex;
+  flex-direction: column;
+  background-color: aliceblue;
+  color: black;
+  text-align: center;
+  width: fit-content;
+  padding: 20px;
+  /* gap: 30px; */
+}
+
+.editModal > input{
+  border-radius: 5px;
+  margin-bottom: 10px;
+  border: 1px solid grey;
+  padding: 10px;
+ 
+}
+.editModal > div> button{
+  width: 100px;
+  /* margin-left: auto; */
+  background-color: rgba(10, 10, 41, 0.947);
+  color: white;
+  margin-left: 5px;
+  padding: 5px;
+ 
+}
+
+
+
+
