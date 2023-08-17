@@ -1,11 +1,11 @@
 import mongoose from "mongoose";
 
 const userSchema = new mongoose.Schema({
-    googleId: {
-        type: String,
-        required: true,
-        unique: true,
-      },
+    // googleId: {
+    //     type: String,
+    //     required: true,
+    //     unique: true,
+    //   },
     
     name:{
         type:String,
@@ -27,15 +27,15 @@ const userSchema = new mongoose.Schema({
         // required:true,
         trim:true,
     },
-    access:{
-        type:String,
-        default:"registerForm"
-    },
-    role:{
-        type:String,
-        enum:["admin","role"],
-        default:"role",
-    }
+    // access:{
+    //     type:String,
+    //     default:"registerForm"
+    // },
+    // role:{
+    //     type:String,
+    //     enum:["admin","role"],
+    //     default:"role",
+    // }
 })
 
 const user = mongoose.model("User",userSchema)

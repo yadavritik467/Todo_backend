@@ -11,10 +11,10 @@ router.get("/get", async (req,res)=>{
 
 
 router.post("/post", async(req,res)=>{
-    const {title,description,dueDate,status,assignUser,user,name} = req.body
+    const {title,task} = req.body
    
 
-    const text = await Post.create({title,description,dueDate,status,assignUser,user,name})
+    const text = await Post.create({title,task})
 
     // await text.save()
     res.status(200).json({message:" task created ",text})
@@ -28,12 +28,12 @@ router.put("/edit/:id",async(req,res)=>{
    
    try {
     const title = req.body.title
-    const description = req.body.description
-    const status = req.body.status
+    const task = req.body.task
+
     const text = await Post.findById(req.params.id)
     text.title = title;
-    text.description = description;
-    text.status = status;
+    text.task = task;
+   
       await text.save()
     res.status(200).json({message:" task edited  " ,text})
    } catch (error) {

@@ -1,4 +1,4 @@
-import mongoose, { now } from "mongoose";
+import mongoose from "mongoose";
 
 const postSchema = new mongoose.Schema({
     user: {
@@ -15,22 +15,11 @@ const postSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
-    description: {
+    task: {
         type: String,
         required: true,
     },
-    dueDate: {
-        type: String,
-        // required: true,
-    },
-    status: {
-        type: String,
-         default:"pending",
-    },
-    assignUser:{
-      type: String,
-
-    },
+   
     createdAt: {
         type: Date,
         default: Date.now,

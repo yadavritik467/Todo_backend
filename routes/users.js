@@ -6,45 +6,64 @@ import { isAuthenticated } from "../middleware/requireSign.js"
 const router = express.Router()
 
 
-router.get("/me", isAuthenticated ,(req, res) => {
+// router.get("/me", isAuthenticated ,(req, res) => {
 
-    res.status(200).json({
-        success: true,
-        user: req.user,
-    });
-})
+//     res.status(200).json({
+//         success: true,
+//         user: req.user,
+//     });
+// })
 
-router.get('/logout', isAuthenticated, async (req, res) => {
-    try {
-      // Destroy the session asynchronously
-      await new Promise((resolve, reject) => {
-        req.session.destroy((err) => {
-          if (err) {
-            reject(err);
-          } else {
-            resolve();
-          }
-        });
-      });
+// router.get('/logout', isAuthenticated, async (req, res) => {
+//     try {
+//       // Destroy the session asynchronously
+//       await new Promise((resolve, reject) => {
+//         req.session.destroy((err) => {
+//           if (err) {
+//             reject(err);
+//           } else {
+//             resolve();
+//           }
+//         });
+//       });
   
-      // Clear the userID cookie
-      res.clearCookie('userID', { maxAge: 0 });
-      console.log("cookie cleared", )
+//       // Clear the userID cookie
+//       res.clearCookie('userID', { maxAge: 0 });
+//       console.log("cookie cleared", )
   
-      res.status(200).json({
-        message: 'User logged out'
-      });
-    } catch (error) {
-      res.status(500).json({
-        message: 'An error occurred during logout'
-      });
-    }
-  });
+//       res.status(200).json({
+//         message: 'User logged out'
+//       });
+//     } catch (error) {
+//       res.status(500).json({
+//         message: 'An error occurred during logout'
+//       });
+//     }
+//   });
 
 router.get('/get', async (req, res) => {
     const user = await User.find({})
     res.status(200).json({ message: " all users  ", user })
 
+})
+
+router.delete("/delete",async (req,res) =>{
+  try {
+      const user = await User.findById(req.params.id);
+      if(!user){
+        return res.status(404).json({
+          message: "User not found",
+        })
+      }else{
+        await user.findByIdAndDelete(req.params.id)
+        return res.status(200).json({
+          message: "User deleted",
+        })
+      }
+
+  } catch (error) {
+    console.log(error.message)
+  }
 })
 
 router.post("/register", async (req, res) => {
